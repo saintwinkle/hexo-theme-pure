@@ -209,3 +209,9 @@ h3 {
 .post-tags {
     margin-right: 2em;
 }
+
+@media (max-width: 48em) {
+    .post-categories, .post-tags {
+        display: none;
+    }
+}
