@@ -30,20 +30,16 @@ html
                     p.post-meta
                       |Author: 
                       a(href="/") #{theme.author}
-                      |&nbsp;Categories: 
                       if (post.categories && post.categories.length)
+                        |&nbsp;Categories: 
                         - post.categories.each(function (categorie) {
                             a.post-category(href=categorie.path) #{categorie.name}
                         - })
-                      else
-                        |None
-                      |&nbsp;Tags: 
                       if (post.tags && post.tags.length)
+                        |&nbsp;Tags: 
                         - post.tags.each(function (tag) {
                             a.post-category(href=tag.path) #{tag.name}
                         - })
-                      else
-                        |None
                   .post-description
                     !=post.content
             - })
@@ -57,7 +53,7 @@ html
                 li
                   a(href="http://github.com/yahoo/pure/") GitHub
     script.
-      var tables = document.getElementsByTagName('table')
+      var tables = document.querySelectorAll('.post-description > table')
       for (var i = 0; i < tables.length; i++) {
         tables[i].setAttribute('class','pure-table pure-table-bordered')
       }
