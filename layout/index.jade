@@ -5,14 +5,8 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title #{theme.title}
     !=css("pure-min.css")
-    <!--[if IE 8]>
-    !=css("grids-responsive-old-ie-min.css")
-    !=css("blog-old-ie.css")
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
     !=css("grids-responsive-min.css")
     !=css("blog.css")
-    <!--<![endif]-->
   body
     #layout.pure-g
       .sidebar.pure-u-1.pure-u-md-1-4
@@ -27,21 +21,21 @@ html
                 a.pure-button(href="http://yuilibrary.com") YUI Library
       .content.pure-u-1.pure-u-md-3-4
         div
-          - page.posts.each(function (post) {
-              .posts
+          .posts
+            - page.posts.each(function (post) {
                 section.post
                   header.post-header
                     img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
                     h2.post-title #{post.title}
                     p.post-meta
-                      |By #{theme.author} under&nbsp;
+                      |By #{theme.author} under 
                       if (post.tags && post.tags.length)
                         - post.tags.each(function (tag) {
                             a.post-category(href=tag.path) #{tag.name}
                         - })
                   .post-description
                     !=post.content
-          - })
+            - })
           .footer
             .pure-menu.pure-menu-horizontal.pure-menu-open
               ul
