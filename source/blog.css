@@ -13,11 +13,6 @@ a:focus {
     text-decoration: underline;
 }
 
-h3 {
-    font-weight: 100;
-}
-
-/* LAYOUT CSS */
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
@@ -103,8 +98,7 @@ h3 {
     float: right;
     margin-left: 1em;
 }
-.post-description {
-    font-family: Georgia, "Cambria", serif;
+.post-content {
     color: #444;
     line-height: 1.8em;
 }
@@ -113,8 +107,15 @@ h3 {
     font-size: 90%;
     margin: 0;
 }
+.post-author,
+.post-date,
+.post-categories,
+.post-tags {
+    margin-right: 2em;
+}
 
-.post-category, .post-tag {
+.post-category,
+.post-tag {
     margin: 0 0.5em 0 0;
     padding: 0.3em 0.8em;
     color: #fff;
@@ -175,6 +176,12 @@ h3 {
         bottom: 0;
     }
 }
+@media (max-width: 48em) {
+    .post-categories,
+    .post-tags {
+        display: none;
+    }
+}
 
 @font-face {
     font-family: 'fontawesome';
@@ -203,15 +210,104 @@ h3 {
 .icon-twitter:before { content: '\e807'; }
 .icon-weibo:before { content: '\e808'; }
 
-.post-author,
-.post-date,
-.post-categories,
-.post-tags {
-    margin-right: 2em;
+blockquote {
+    background-color: #ddd;
+    margin: 0;
+    padding: 0.1em 1em;
+    border-left: 5px solid #999
+}
+code {
+    font-family: Menlo, Monaco, Consolas, monospace, serif;
+    font-size: 0.85em;
+    background-color: #ddd;
+    padding: 0.2em 0.5em;
 }
 
-@media (max-width: 48em) {
-    .post-categories, .post-tags {
-        display: none;
-    }
+.highlight {
+    display: block;
+    overflow-x: auto;
+    background: #ddd;
+    color: #4d4d4c;
+    padding: 1em;
+    font-size: 0.85em;
+    border: 1px solid #ccc;
+}
+.highlight pre {
+    font-family: Menlo, Monaco, Consolas, monospace, serif;
+    margin: 0;
+    padding: 0;
+}
+.highlight .gutter pre {
+    text-align: right;
+    padding-right: 1em;
+}
+.highlight .line {
+    height: 1.8em;
+    white-space: pre;
+}
+
+pre .comment {
+    color: #8e908c;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+    color: #c82829;
+}
+pre .number,
+pre .preprocessor,
+pre .pragma,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+    color: #f5871f;
+}
+pre .ruby .class .title,
+pre .css .rules .attribute {
+    color: #eab700;
+}
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+    color: #718c00;
+}
+pre .title,
+pre .css .hexcolor {
+    color: #3e999f;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+    color: #4271ae;
+}
+pre .keyword,
+pre .javascript .function {
+    color: #8959a8;
+}
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+    opacity: 0.5;
 }

@@ -1,32 +1,21 @@
 doctype html
 html
   head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title #{theme.title}
-    !=css("pure-min.css")
-    !=css("grids-responsive-min.css")
-    !=css("blog.css")
+    include _partial/head
   body
     #layout.pure-g
       .sidebar.pure-u-1.pure-u-md-1-4
         .header
-          h1.brand-title #{theme.title}
-          h2.brand-tagline #{theme.description}
-          nav.nav
-            ul.nav-list
-              li.nav-item
-                a.pure-button(href="http://purecss.io") Pure
-              li.nav-item
-                a.pure-button(href="http://yuilibrary.com") YUI Library
+          include _partial/header
       .content.pure-u-1.pure-u-md-3-4
         div
           .posts
             - page.posts.each(function (post) {
                 section.post
-                  header.post-header
+                  .post-header
                     img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
-                    h2.post-title #{post.title}
+                    h2.post-title
+                      a(href!=url_for(post.path)) #{post.title}
                     p.post-meta
                       span.post-author
                         i.icon-user
@@ -46,24 +35,17 @@ html
                           - post.tags.each(function (tag) {
                               a.post-tag(href=tag.path) #{tag.name}
                           - })
-                  .post-description
+                  .post-content
                     !=post.content
             - })
           .footer
-            .pure-menu.pure-menu-horizontal.pure-menu-open
-              ul
-                li
-                  a(href="http://purecss.io/") About
-                li
-                  a(href="http://twitter.com/yuilibrary/") Twitter
-                li
-                  a(href="http://github.com/yahoo/pure/") GitHub
+            include _partial/footer
     script.
-      var tables = document.querySelectorAll('.post-description > table')
+      var tables = document.querySelectorAll('.post-content > table')
       for (var i = 0; i < tables.length; i++) {
         tables[i].setAttribute('class','pure-table pure-table-bordered')
       }
-      var imgs = document.querySelectorAll('.post-description img')
+      var imgs = document.querySelectorAll('.post-content img')
       for (var i = 0; i < imgs.length; i++) {
         imgs[i].setAttribute('class','pure-img')
       }

@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    include _partial/head
+  body
+    #layout.pure-g
+      .sidebar.pure-u-1.pure-u-md-1-4
+        .header
+          include _partial/header
+      .content.pure-u-1.pure-u-md-3-4
+        div
+          section.post
+            .post-header
+              img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
+              h2.post-title
+                a(href!=url_for(page.path)) #{page.title}
+              p.post-meta
+                span.post-author
+                  i.icon-user
+                  | #{theme.author}
+                span.post-date
+                  i.icon-clock
+                  | #{date(page.date, 'YYYY-MM-DD HH:mm')}
+                if (page.categories && page.categories.length)
+                  span.post-categories
+                    i.icon-book
+                    - page.categories.each(function (category) {
+                        a.post-category(href=category.path) #{category.name}
+                    - })
+                if (page.tags && page.tags.length)
+                  span.post-tags
+                    i.icon-tags
+                    - page.tags.each(function (tag) {
+                        a.post-tag(href=tag.path) #{tag.name}
+                    - })
+            .post-content
+              !=page.content
+          .footer
+            include _partial/footer
+    script.
+      var tables = document.querySelectorAll('.post-content > table')
+      for (var i = 0; i < tables.length; i++) {
+        tables[i].setAttribute('class','pure-table pure-table-bordered')
+      }
+      var imgs = document.querySelectorAll('.post-content img')
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].setAttribute('class','pure-img')
+      }
