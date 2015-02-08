@@ -11,41 +11,8 @@ html
         div
           .posts
             - page.posts.each(function (post) {
-                section.post
-                  .post-header
-                    img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
-                    h2.post-title
-                      a(href!=url_for(post.path)) #{post.title}
-                    p.post-meta
-                      span.post-author
-                        i.icon-user
-                        | #{theme.author}
-                      span.post-date
-                        i.icon-clock
-                        | #{date(post.date, 'YYYY-MM-DD HH:mm')}
-                      if (post.categories && post.categories.length)
-                        span.post-categories
-                          i.icon-book
-                          - post.categories.each(function (category) {
-                              a.post-category(href=category.path) #{category.name}
-                          - })
-                      if (post.tags && post.tags.length)
-                        span.post-tags
-                          i.icon-tags
-                          - post.tags.each(function (tag) {
-                              a.post-tag(href=tag.path) #{tag.name}
-                          - })
-                  .post-content
-                    !=post.content
+                !=partial('_partial/article', {post: post})
             - })
           .footer
             include _partial/footer
-    script.
-      var tables = document.querySelectorAll('.post-content > table')
-      for (var i = 0; i < tables.length; i++) {
-        tables[i].setAttribute('class','pure-table pure-table-bordered')
-      }
-      var imgs = document.querySelectorAll('.post-content img')
-      for (var i = 0; i < imgs.length; i++) {
-        imgs[i].setAttribute('class','pure-img')
-      }
+    !=js('js/script.js')

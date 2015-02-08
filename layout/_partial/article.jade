@@ -1,0 +1,26 @@
+section.post
+  .post-header
+    img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
+    h2.post-title
+      a(href!=url_for(post.path)) #{post.title}
+    p.post-meta
+      span.post-author
+        i.icon-user
+        | #{theme.author}
+      span.post-date
+        i.icon-clock
+        | #{date(post.date, 'YYYY-MM-DD HH:mm')}
+      if (post.categories && post.categories.length)
+        span.post-categories
+          i.icon-book
+          - post.categories.each(function (category) {
+              a.post-category(href!=url_for(category.path)) #{category.name}
+          - })
+      if (post.tags && post.tags.length)
+        span.post-tags
+          i.icon-tags
+          - post.tags.each(function (tag) {
+              a.post-tag(href!=url_for(tag.path)) #{tag.name}
+          - })
+  .post-content
+    !=post.content
