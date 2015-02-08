@@ -1,12 +1,12 @@
 doctype html
 html
   head
-    include _partial/head
+    !=partial('_partial/head')
   body
     #layout.pure-g
       .sidebar.pure-u-1.pure-u-md-1-4
         .header
-          include _partial/header
+          !=partial('_partial/header')
       .content.pure-u-1.pure-u-md-3-4
         div
           .posts
@@ -14,5 +14,5 @@ html
                 !=partial('_partial/article', {post: post})
             - })
           .footer
-            include _partial/footer
+            !=partial('_partial/footer')
     !=js('js/script.js')

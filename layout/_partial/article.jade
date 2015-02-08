@@ -1,6 +1,7 @@
 section.post
   .post-header
-    img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
+    if (theme.email)
+      img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
     h2.post-title
       a(href!=url_for(post.path)) #{post.title}
     p.post-meta
