@@ -8,11 +8,10 @@ html
         .header
           !=partial('_partial/header')
       .content.pure-u-1.pure-u-md-3-4
-        div
-          .posts
-            - page.posts.each(function (post) {
-                !=partial('_partial/article', {post: post})
-            - })
-          .footer
-            !=partial('_partial/footer')
+        .posts
+          - page.posts.each(function (post) {
+              !=partial('_partial/article', {post: post})
+          - })
+        .footer
+          !=partial('_partial/footer')
     !=js('js/script.js')

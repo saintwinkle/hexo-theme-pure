@@ -93,6 +93,9 @@ a:focus {
     color: #222;
     margin-bottom: 0.2em;
 }
+.post-title a {
+    color: #222;
+}
 .post-avatar {
     border-radius: 50px;
     float: right;
