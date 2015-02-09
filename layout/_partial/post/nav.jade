@@ -1,0 +1,15 @@
+if post.prev || post.next
+  nav#post-nav
+    if post.prev
+      a#post-nav-newer.post-nav-link-wrap(href!=url_for(post.prev.path))
+        strong.post-nav-caption Newer
+        .post-nav-title
+          if post.prev.title
+            =post.prev.title
+          else
+            |(no title)
+    if post.next
+      a#post-nav-older.post-nav-link-wrap(href!=url_for(post.next.path))
+        strong.post-nav-caption Older
+        .post-nav-title
+          =post.next.title

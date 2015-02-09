@@ -1,4 +1,5 @@
 * {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Lucida, Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -108,7 +109,9 @@ a:focus {
 .post-meta {
     color: #999;
     font-size: 90%;
-    margin: 0;
+    margin: 1em 0 0 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
 }
 .post-author,
 .post-date,
@@ -147,6 +150,155 @@ a:focus {
     margin-left: 1em;
     color: #fff;
     text-shadow: 0 1px 1px #333;
+}
+
+.video-container {
+    position: relative;
+    padding-top: 60%;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0; 
+}
+
+#post-nav {
+    zoom: 1;
+    position: relative;
+}
+#post-nav:before,
+#post-nav:after {
+    content: "";
+    display: table;
+}
+#post-nav:after {
+    clear: both;
+}
+@media screen and (min-width: 48em) {
+    #post-nav {
+        margin: 3.125em 0;
+    }
+    #post-nav:before {
+        width: 0.5em;
+        height: 0.5em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.25em;
+        margin-left: -0.25em;
+        content: "";
+        border-radius: 50%;
+        background: #ddd;
+        box-shadow: 0 1px 2px #fff;
+    }
+}
+.post-nav-link-wrap {
+    text-decoration: none;
+    text-shadow: 0 1px #fff;
+    color: #999;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 3.125em;
+    text-align: center;
+    display: block;
+}
+.post-nav-link-wrap:hover {
+    text-decoration: none;
+    color: #555;
+}
+@media screen and (min-width: 48em) {
+    .post-nav-link-wrap {
+        width: 50%;
+        margin-top: 0;
+    }
+}
+@media screen and (min-width: 48em) {
+    #post-nav-newer {
+        float: left;
+        text-align: right;
+        padding-right: 1.25em;
+    }
+}
+@media screen and (min-width: 48em) {
+    #post-nav-older {
+        float: right;
+        text-align: left;
+        padding-left: 1.25em;
+    }
+}
+.post-nav-caption {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ddd;
+    line-height: 1em;
+    font-weight: bold;
+}
+#post-nav-newer .post-nav-caption {
+    margin-right: -2px;
+}
+.post-nav-title {
+    font-size: 0.85em;
+    line-height: 1.6em;
+    margin-top: 0.5em;
+}
+
+#page-nav {
+    zoom: 1;
+    margin: 3.125em auto;
+    background: #fff;
+    box-shadow: 1px 2px 3px #ddd;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    color: #999;
+    overflow: hidden;
+}
+#page-nav:before,
+#page-nav:after {
+    content: "";
+    display: table;
+}
+#page-nav:after {
+    clear: both;
+}
+#page-nav a,
+#page-nav span {
+    padding: 0.625em 1.25em;
+}
+#page-nav a {
+    color: #999;
+    text-decoration: none;
+}
+#page-nav a:hover {
+    background: #999;
+    color: #fff;
+}
+#page-nav .prev {
+    float: left;
+}
+#page-nav .next {
+    float: right;
+}
+#page-nav .page-number {
+    display: inline-block;
+}
+@media screen and (max-width: 30em) {
+    #page-nav .page-number {
+        display: none;
+    }
+}
+#page-nav .current {
+    color: #555;
+    font-weight: bold;
+}
+#page-nav .space {
+    color: #ddd;
 }
 
 .footer {
@@ -189,7 +341,7 @@ a:focus {
 @font-face {
     font-family: 'fontawesome';
     src: url('../fonts/fontawesome.eot');
-    src: url('../fonts/fontawesome.eot#iefix') format('embedded-opentype'),
+    src: url('../fonts/fontawesome.eot?#iefix') format('embedded-opentype'),
          url('../fonts/fontawesome.woff') format('woff'),
          url('../fonts/fontawesome.ttf') format('truetype'),
          url('../fonts/fontawesome.svg#fontawesome') format('svg');

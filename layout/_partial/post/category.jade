@@ -1,0 +1,6 @@
+if (post.categories && post.categories.length)
+  span.post-categories
+    i.icon-book
+    - post.categories.each(function (category) {
+        a.post-category(href!=url_for(category.path)) #{category.name}
+    - })

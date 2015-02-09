@@ -1,0 +1,20 @@
+if pagination == 2
+  - page.posts.each(function (post) {
+      !=partial('article', {post: post, index: true})
+  - })
+  if page.total > 1
+    nav#page-nav
+      !=paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})
+else
+  - var last
+  - page.posts.each(function (post) {
+      - var year = post.date.year()
+      if last != year
+        if last != null
+        - last = year
+        .archive-year
+          a.archive-year(href!=url_for('archives/' + year))
+            =year
+      .archive-post
+        !=partial('archive-post', {post: post, even: i % 2 == 0})
+  - })

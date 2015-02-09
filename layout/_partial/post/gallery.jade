@@ -1,0 +1,7 @@
+if post.photos && post.photos.length
+  .post-gallery
+    .post-gallery-photos
+      - post.photos.forEach(function (photo, i) {
+          a.post-gallery-img(href!=url_for(photo))
+            img(src!=url_for(photo) itemprop="image")
+      - })

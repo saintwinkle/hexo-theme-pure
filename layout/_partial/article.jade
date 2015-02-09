@@ -1,27 +1,29 @@
 .post
+  !=partial('post/gallery')
   .post-header
-    if (theme.email)
-      img.post-avatar(height="48" width="48" src!=gravatar(theme.email, 48))
-    h2.post-title
-      a(href!=url_for(post.path)) #{post.title}
+    !=partial('post/avatar')
+    if post.link || post.title
+      h2.post-title
+        !=partial('post/title')
     p.post-meta
-      span.post-author
-        i.icon-user
-        | #{theme.author}
-      span.post-date
-        i.icon-clock
-        | #{date(post.date, 'YYYY-MM-DD HH:mm')}
-      if (post.categories && post.categories.length)
-        span.post-categories
-          i.icon-book
-          - post.categories.each(function (category) {
-              a.post-category(href!=url_for(category.path)) #{category.name}
-          - })
-      if (post.tags && post.tags.length)
-        span.post-tags
-          i.icon-tags
-          - post.tags.each(function (tag) {
-              a.post-tag(href!=url_for(tag.path)) #{tag.name}
-          - })
+      //- span.post-author
+      //-   i.icon-user
+      //-   | #{theme.author}
+      !=partial('post/date', {date_format: 'YYYY-MM-DD HH:mm'})
+      !=partial('post/category')
+      !=partial('post/tag')
   .post-content
-    !=post.content
+    if post.excerpt && index
+      !=post.excerpt
+      if theme.excerpt_link
+        p.post-excerpt-link
+          a(href="!=url_for(post.path)#more") #{theme.excerpt_link}
+    else
+      !=post.content
+  if !index
+    !=partial('post/nav')
+  if !index && post.comments
+    if theme.disqus_shortname
+      #disqus_thread
+    else if theme.duoshuo_shortname
+      .ds-thread(data-thread-key="#{post.layout}-#{post.slug}" data-title=post.title data-url=post.permalink)
