@@ -3,5 +3,14 @@ author: Twinkle
 description: Creating a blog layout using Pure
 email: 
 
+menu:
+  archives: /archives
+  about: /about
+
 disqus_shortname: 
 duoshuo_shortname: 
+
+weibo: 
+github: 
+gplus: 
+twitter: 

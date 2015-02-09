@@ -2,7 +2,6 @@ h1.brand-title #{theme.title}
 h2.brand-tagline #{theme.description}
 nav.nav
   ul.nav-list
-    li.nav-item
-      a.pure-button(href="http://purecss.io") Pure
-    li.nav-item
-      a.pure-button(href="http://yuilibrary.com") YUI Library
+    each path, name in theme.menu
+      li.nav-item
+        a.pure-button(href!=url_for(path)) #{name}

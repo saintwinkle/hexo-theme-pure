@@ -1,5 +1,4 @@
 .post
-  !=partial('post/gallery')
   .post-header
     !=partial('post/avatar')
     if post.link || post.title
@@ -13,6 +12,7 @@
       !=partial('post/category')
       !=partial('post/tag')
   .post-content
+    !=partial('post/gallery')
     if post.excerpt && index
       !=post.excerpt
       if theme.excerpt_link
