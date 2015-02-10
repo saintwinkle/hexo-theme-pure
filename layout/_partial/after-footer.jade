@@ -1,3 +1,4 @@
+!=js('js/script')
 if theme.disqus_shortname
   script.
     var disqus_shortname = '#{theme.disqus_shortname}';
@@ -19,5 +20,4 @@ else if theme.duoshuo_shortname
       (document.getElementsByTagName('head')[0] 
        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-
-!=js('js/script')
+!=partial('ga')
