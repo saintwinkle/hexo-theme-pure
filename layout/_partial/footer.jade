@@ -1,11 +1,11 @@
 .social-link
-  a(href='http://weibo.com/n/' + theme.weibo target="_blank")
+  a(href="http://weibo.com/" + (theme.weibo ? theme.weibo : "") target="_blank")
     i.icon-weibo
-  a(href='https://github.com/' + theme.github target="_blank")
+  a(href="https://github.com/" + (theme.github ? theme.github : "") target="_blank")
     i.icon-github
-  a(href='https://plus.google.com/' + theme.gplus target="_blank")
+  a(href="https://plus.google.com/" + (theme.gplus ? theme.gplus : "") target="_blank")
     i.icon-gplus
-  a(href='https://twitter.com/' + theme.twitter target="_blank")
+  a(href="https://twitter.com/" + (theme.twitter ? theme.twitter : "") target="_blank")
     i.icon-twitter
 .copyright
   | &copy; #{date(new Date(), 'YYYY')} #{theme.author}.

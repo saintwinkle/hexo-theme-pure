@@ -1,3 +1,4 @@
 span.post-date
-  i.icon-clock
+  if icon
+    i.icon-clock
   | #{date(post.date, date_format)}

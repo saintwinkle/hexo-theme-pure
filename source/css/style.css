@@ -41,6 +41,10 @@ a:focus {
 .brand-title {
     text-transform: uppercase;
 }
+.brand-title a {
+    color: #fff;
+    text-decoration: none;
+}
 .brand-tagline {
     font-weight: 300;
     color: rgb(176, 202, 219);
@@ -311,16 +315,20 @@ a:focus {
 .footer a {
     text-decoration: none;
 }
-a:hover .icon-weibo:before {
+.footer .social-link a {
+    font-size: 1.25em;
+    padding: 0 0.5em;
+}
+.footer a:hover .icon-weibo:before {
     color: #e6162d;
 }
-a:hover .icon-github:before {
+.footer a:hover .icon-github:before {
     color: #333;
 }
-a:hover .icon-gplus:before {
+.footer a:hover .icon-gplus:before {
     color: #dd4b39;
 }
-a:hover .icon-twitter:before {
+.footer a:hover .icon-twitter:before {
     color: #00aced;
 }
 
