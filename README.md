@@ -3,26 +3,20 @@
 A responsive pure theme for [Hexo](http://hexo.io/).
 
 - Based on [Landscape](https://github.com/hexojs/hexo-theme-landscape/)
-- Powered by [Pure.css](http://purecss.io/layouts/blog/)
-- [Preview]()
+- Powered by [Pure.css](http://purecss.io/)
+- [Preview](http://purecss.io/layouts/blog/)
 
 ## Installation
 
 ### Install
 
 ``` bash
-$ git clone https://github.com/saintwinkle/hexo-theme-pure.git themes/landscape
+$ git clone https://github.com/saintwinkle/hexo-theme-pure.git themes/pure
 ```
 
 ### Enable
 
 - Modify `theme` setting in `_config.yml` to `pure`.
-- Modify pagination settings:
-```
-archive: 1
-category: 2
-tag: 2
-```
 
 ### Update
 
@@ -42,7 +36,7 @@ email: # used for gravatar
 # if you copy an avatar file to ./source folder,
 # just uncomment the variable below,
 # and replace "avatar.png" to your image name.
-# better to use 48x48px.
+# better to use 48x48 pixels.
 #avatar: avatar.png
 
 # menu buttons in header
@@ -51,6 +45,7 @@ menu:
   about: /about
 
 # comments system
+# disqus always goes first once configured
 disqus_shortname: 
 duoshuo_shortname: 
 
