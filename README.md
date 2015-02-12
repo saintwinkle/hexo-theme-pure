@@ -11,12 +11,13 @@ A responsive pure theme for [Hexo](http://hexo.io/).
 ### Install
 
 ``` bash
-$ git clone https://github.com/saintwinkle/hexo-theme-pure.git themes/pure
+git clone https://github.com/saintwinkle/hexo-theme-pure.git themes/pure
 ```
 
 ### Enable
 
 - Modify `theme` setting in `_config.yml` to `pure`.
+- Modify `pagination` settings for `archive`, `category` and `tag` in `_config.yml`.
 
 ### Update
 

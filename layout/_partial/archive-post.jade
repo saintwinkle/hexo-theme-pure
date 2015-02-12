@@ -1,2 +1,10 @@
-!=partial('post/title')
-!=partial('post/date', {date_format: 'MM-DD', icon: false})
+h2.archive-post-title
+  !=partial('post/title')
+p.archive-post-meta
+  !=partial('post/date', {date_format: 'MM-DD HH:mm'})
+  !=partial('post/category')
+  !=partial('post/tag')
+if post.link
+  a(href!=url_for(post.link) target="_blank")
+else
+  a(href!=url_for(post.path))

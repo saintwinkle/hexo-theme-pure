@@ -1,9 +1,10 @@
 if post.link
   a(href!=url_for(post.link) target="_blank") #{post.title}
-else if post.title
-  if index
-    a(href!=url_for(post.path)) #{post.title}
-  else
-    =post.title
 else
-  a(href!=url_for(post.path)) no title
+  if post.title
+    if index
+      a(href!=url_for(post.path)) #{post.title}
+    else
+      =post.title
+  else
+    a(href!=url_for(post.path)) (no title)

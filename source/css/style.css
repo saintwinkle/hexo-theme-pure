@@ -123,7 +123,6 @@ a:focus {
 .post-tags {
     margin-right: 2em;
 }
-
 .post-category,
 .post-tag {
     margin: 0 0.5em 0 0;
@@ -145,6 +144,39 @@ a:focus {
     .post-category-js {
         background: #df2d4f;
     }
+
+.archive-year a {
+    color: #000;
+}
+.archive-post {
+    position: relative;
+    padding: 1em 0 1em 2em;
+}
+.archive-post > a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.archive-post:hover {
+    background-color: #eee;
+}
+.archive-post-title {
+    margin: 0;
+    padding-right: 0;
+}
+.archive-post-title a {
+    color: #222;
+    text-decoration: none;
+}
+.archive-post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 1em 0 0 0;
+    position: relative;
+    z-index: 10;
+}
 
 .post-images {
     margin: 1em 0;
