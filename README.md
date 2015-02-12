@@ -14,6 +14,11 @@ A responsive pure theme for [Hexo](http://hexo.io/).
 git clone https://github.com/saintwinkle/hexo-theme-pure.git themes/pure
 ```
 
+I use `jade` instead of `ejs`, so don't forget to:
+```
+npm install hexo-renderer-jade --save
+```
+
 ### Enable
 
 - Modify `theme` setting in `_config.yml` to `pure`.
