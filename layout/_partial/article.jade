@@ -14,7 +14,7 @@
       !=post.excerpt
       if theme.excerpt_link
         p.post-excerpt-link
-          a(href="!=url_for(post.path)#more") #{theme.excerpt_link}
+          a(href!=url_for(post.path) + "#more") #{theme.excerpt_link}
     else
       !=post.content
   if !index
